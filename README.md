@@ -15,4 +15,4 @@ End - If they don't want to reroll, take the list and return the values
 
 Init - Takes the values of the final dice roll, also has the current user score
 <br>
-Card - Show the score card with the option to choose which box to fill in
+Card - Asks what category the user would like to choose for their scoring. Then it calculates the appropiate score for that roll depending on the final dice rolls.
