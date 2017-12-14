@@ -2,6 +2,8 @@
 
 ## Outline
 
+Three Classes:
+
 ### Dice Class
 
 Beginning Roll - generate 5 dice values
@@ -11,8 +13,10 @@ Reroll - Ask what dice to reroll and reroll the number
 End - If they don't want to reroll, take the list and return the values
 
 
-### Scorecard Class
+### Score Class
 
-Init - Takes the values of the final dice roll, also has the current user score
-<br>
-Card - Asks what category the user would like to choose for their scoring. Then it calculates the appropiate score for that roll depending on the final dice rolls.
+This class basically analyzes the dice value outputs and checks to see what potential scoring options the user could pursue. This class will be merged with points class this weekend. Then, the functions in points class will cooresponnd to the available scoring options and calculate and return the new user score.
+
+###Points Class
+
+This class simply takes each potential scoring category and calculates the points for each category.
