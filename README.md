@@ -17,6 +17,6 @@ End - If they don't want to reroll, take the list and return the values
 
 This class basically analyzes the dice value outputs and checks to see what potential scoring options the user could pursue. This class will be merged with points class this weekend. Then, the functions in points class will cooresponnd to the available scoring options and calculate and return the new user score.
 
-###Points Class
+### Points Class
 
 This class simply takes each potential scoring category and calculates the points for each category.
