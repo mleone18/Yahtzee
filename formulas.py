@@ -1,4 +1,4 @@
-class Scorecard(): 
+class Calculations(): 
 	def __init__(self, dice, score):
 		self.dice = dice
 		self.score = 0
