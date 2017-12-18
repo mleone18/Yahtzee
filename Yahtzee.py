@@ -3,33 +3,9 @@ class Scorecard():
 		self.dice = dice
 		self.score = 0
 
-	def checkAces(self):
-		self.score = self.score + self.dice.count(1)
-		return self.score
-
-	def checkTwos(self):
-		twos = self.dice.count(2)
-		self.score = self.score + twos*2
-		return self.score
-
-	def checkThrees(self):
-		threes = self.dice.count(3)
-		self.score = self.score + threes*3
-		return self.score
-
-	def checkFours(self):
-		fours = self.dice.count(4)
-		self.score = self.score + fours*4
-		return self.score
-
-	def checkFives(self):
-		fives = self.dice.count(5)
-		self.score = self.score + fives*5
-		return self.score
-
-	def checkSixes(self):
-		sixes = self.dice.count(6)
-		self.score = self.score + sixes*6
+	def check(self, num): #the upper levels all use the same scoring function since it is the sum of the value. 
+		counter = self.dice.count(num)
+		self.score = self.score + counter*num
 		return self.score
 
 	def Upperbonus(self):
@@ -38,32 +14,12 @@ class Scorecard():
 		else:
 			return self.score
 
-	def threekind(self):
+	def dicesum(self): #three of a kind, four of a kind, and chance all have the same scoring output.
 		self.score = self.score + sum(self.dice)
 		return self.score
 
-	def fourkind(self):
-		self.score = self.score + sum(self.dice)
-		return self.score
-		
-	def fullhouse(self):
-		self.score = self.score + 25
-		return self.score
-
-	def smallstraight(self):
-		self.score = self.score + 30
-		return self.score
-
-	def largestraight(self):
-		self.score = self.score + 40
-		return self.score
-
-	def YAHTZEE(self):
-		self.score = self.score + 50
-		return self.score
-
-	def chance(self):
-		self.score = self.score + sum(self.dice)
+	def lower(self): #fullhouse, small straight, large straight and yahtzee all use same function but in runner code will have different integers added because set score values. 
+		self.score = self.score + 25 #30, 40 50
 		return self.score
 
 	def grandtotal(self):
