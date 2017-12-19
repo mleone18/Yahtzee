@@ -2,7 +2,7 @@ class Score:
     def __init__(self, dice):
         self.dice = dice
         
-    def check(self):
+    def combos(self):
         print("These are your options:")
         if 1 in self.dice:
             points1 = self.dice.count(1)
