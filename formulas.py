@@ -1,5 +1,5 @@
 class Calculations(): 
-	def __init__(self, dice, score):
+	def __init__(self, dice):
 		self.dice = dice
 		self.score = 0
 
