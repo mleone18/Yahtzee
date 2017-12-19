@@ -1,9 +1,10 @@
 from formulas import Calculations
 class Score:
-    def __init__(self, dice):
+    def __init__(self, dice, score):
         self.dice = dice
         self.bools = [False, False, False, False, False, False, False, False, False, False, False, False, False]
         self.bools2 = [False, False, False, False, False, False, False, False, False, False, False, False, False]
+        self.c = Calculations(dice, score)
         
     def combos(self):
         print("These are your options:")
@@ -59,69 +60,72 @@ class Score:
             points13 = 25
             self.bools2[12] = True
             print("You can use a full house to get " + str(points13) + " points")
-        c = Calculations(self.dice) #being taken from calculations class, taking self.numbers from Score class.
+        self.c.updateDice(self.dice) #being taken from calculations class, taking self.numbers from Score class.
         while True:
             print("Type 'stop' to end the game")
             ans = str(input("What would you like to do?" ))            
             if ans.lower() == "aces" and self.bools2[0] == True:
                 self.bools[0] = True
-                c.check(1)
+                self.c.check(1)
                 break
             elif ans.lower() == "twos" and self.bools2[1] == True:
                 self.bools[1] = True
-                c.check(2)
+                self.c.check(2)
                 break
             elif ans.lower() == "threes" and self.bools2[2] == True:
                 self.bools[2] = True
-                c.check(3)
+                self.c.check(3)
                 break
             elif ans.lower() == "fours" and self.bools2[3] == True:
                 self.bools[3] = True
-                c.check(4)
+                self.c.check(4)
                 break
             elif ans.lower() == "fives" and self.bools2[4] == True:
                 self.bools[4] = True
-                c.check(5)
+                self.c.check(5)
                 break
             elif ans.lower() == "sixes" and self.bools2[5] == True:
                 self.bools[5] = True
-                c.check(6)
+                self.c.check(6)
                 break
             elif ans.lower() == "three of a kind" and self.bools2[6] == True:
                 self.bools[6] = True
-                c.dicesum()
+                self.c.dicesum()
                 break
             elif ans.lower() == "four of a kind" and self.bools2[7] == True:
                 self.bools[7] = True
-                c.dicesum()
+                self.c.dicesum()
                 break
             elif ans.lower() == "yahtzee" and self.bools2[8] == True:
                 self.bools[8] = True
-                c.lower()
+                self.c.lower(50)
                 break
             elif ans.lower() == "small straight" and self.bools2[9] == True:
                 self.bools[9] = True
-                c.lower()
+                self.c.lower(30)
                 break
             elif ans.lower() == "large straight" and self.bools2[10] == True:
                 self.bools[10] = True
-                c.lower()
+                self.c.lower(40)
                 break
             elif ans.lower() == "chance" and self.bools2[11] == True:
                 self.bools[11] = True
-                c.dicesum()
+                self.c.dicesum()
                 break
             elif ans.lower() == "full house" and self.bools2[12] == True:
                 self.bools[12] = True
-                c.lower()
+                self.c.lower(25)
                 break
             elif ans.lower() == "stop":
                 print("You finished with a score of " + c.score + " points.")
                 break
             else:
                 print("I don't know what " + ans + " means, try again.")
+
+
         self.bools2 = [False, False, False, False, False, False, False, False, False, False, False, False, False]
-        print('Score: ' + str(c.score))
+
+        print('Score: ' + str(self.c.score))
         
 
             

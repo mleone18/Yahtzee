@@ -6,9 +6,12 @@ play = input('Would you like to play Yahtzee?')
 if play == "no" or play == "No":
 	play = input('Would you like to play Yahtzee?')
 
-
-die = Die()
-die.reroll()
-myscore = Score(die.numbers)
-myscore.combos()
+for i in range(14): 	
+	die = Die()
+	die.reroll()
+	if i==0:
+		myscore = Score(die.numbers, 0)
+	else: 
+		myscore = Score(die.numbers, myscore.c.score)
+	myscore.combos()
 

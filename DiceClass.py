@@ -16,8 +16,3 @@ class Die():
                     i += 1
                 x += 1
                 print(self.numbers)
-
-bob = Die()
-
-bob.reroll()
-
