@@ -12,8 +12,12 @@ class Die():
                 ans2 = list(map(int, ans.split()))  
                 i = 0
                 while i < len(ans2):
-                    self.numbers[i-1] = randint(1,6)
+                    self.numbers[ans2[i] - 1] = randint(1,6)
                     i += 1
                 x += 1
                 print(self.numbers)
+
+bob = Die()
+
+bob.reroll()
 
